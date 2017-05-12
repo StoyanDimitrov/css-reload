@@ -1,0 +1,4 @@
+*.xpi
+*.sh
+*.cmd
+web-ext-artifacts
