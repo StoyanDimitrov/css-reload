@@ -1,12 +1,13 @@
 'use strict'
 
-browser.commands.onCommand.addListener(command => {
-  browser.tabs.query({
-    currentWindow: true,
-    active: true,
-  }).then(tabs => {
-    browser.tabs.sendMessage(tabs[0].id, {
-      'command': command
-    })
+browser.tabs.onActivated.addListener(active => {
+  browser.pageAction.show(active.tabId)
+})
+
+browser.pageAction.onClicked.addListener(tab => {
+  browser.tabs.executeScript(tab.id, {
+    file: 'assets/css-reload.js'
+  }).catch(err => {
+    // mute permission errors
   })
 })

@@ -1,27 +1,30 @@
 {
   "manifest_version": 2,
   "name": "CSS Reload",
-  "version": "0.0.1",
+  "version": "0.2.1",
 
-  "description": "Reload the linked CSS stylesheets in the current page when pressing Ctrl+F9",
+  "description": "__MSG_description__",
   "homepage_url": "https://github.com/StoyanDimitrov/css-reload",
 
   "background": {
     "scripts": ["background.js"]
   },
-  "content_scripts": [
-    {
-      "matches": ["*://*/*"],
-      "js": ["content_scripts/css-reload.js"]
-    }
-  ],
+
+  "page_action": {
+    "default_icon": "assets/tool-styleeditor.svg",
+    "default_title": "__MSG_page_action_title__"
+  },
 
   "commands": {
-    "css-reload": {
+    "_execute_page_action": {
       "suggested_key": {
         "default": "Ctrl+F9"
       },
-      "description": "Send a 'css-reload' event"
+      "description": "Reloads the pages' CSS"
     }
-  }
+  },
+
+  "permissions": ["activeTab"],
+
+  "default_locale": "en"
 }

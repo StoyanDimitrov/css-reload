@@ -1,0 +1,10 @@
+{
+  "description": {
+    "message": "Reload the linked CSS stylesheets in the current page using Ctrl+F9 or page action.",
+    "description": "Description of the extension."
+  },
+  "page_action_title": {
+    "message": "Reloads the stylesheets",
+    "description": "Action button title."
+  }
+}
