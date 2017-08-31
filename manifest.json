@@ -29,7 +29,7 @@
     }
   },
 
-  "permissions": ["activeTab"],
+  "permissions": ["activeTab", "contextMenus"],
 
   "default_locale": "en"
 }
