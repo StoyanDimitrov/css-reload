@@ -18,13 +18,30 @@ browser.tabs.onUpdated.addListener((tabId, changed) => {
 })
 
 browser.pageAction.onClicked.addListener((tab) => {
-  browser.tabs.executeScript(tab.id, {
+  executeReloadCssScript(tab.id)
+})
+
+browser.contextMenus.create({
+  id: "reloadCss",
+  title: "Reloads the stylesheets",
+  title: browser.i18n.getMessage("context_menu_title"),
+  contexts: ["page"]
+})
+
+browser.contextMenus.onClicked.addListener(function(info, tab) {
+  if (info.menuItemId === "reloadCss"){
+    executeReloadCssScript(tab.id)
+  }
+})
+
+function executeReloadCssScript(tabId)
+{
+  browser.tabs.executeScript(tabId, {
     file: 'assets/css-reload.js'
   }).catch(err => {
     // mute permission errors
   })
-})
-
+}
 
 function activateAction(tabId)
 {

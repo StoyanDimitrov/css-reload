@@ -6,5 +6,9 @@
   "page_action_title": {
     "message": "Reloads the stylesheets",
     "description": "Action button title."
+  },
+  "context_menu_title": {
+    "message": "Reload the stylesheets",
+    "description": "Context menu title."
   }
 }
