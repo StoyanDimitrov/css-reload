@@ -1,14 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "CSS Reload",
-  "version": "0.2.2",
-
+  "version": "0.2.3",
+  "name": "__MSG_title__",
   "description": "__MSG_description__",
   "homepage_url": "https://github.com/StoyanDimitrov/css-reload",
 
   "icons": {
-    "48": "assets/tool-styleeditor.svg",
-    "96": "assets/tool-styleeditor.svg"
+    "96": "assets/tool-styleeditor.svg",
+    "48": "assets/tool-styleeditor.svg"
   },
 
   "background": {
@@ -17,7 +16,7 @@
 
   "page_action": {
     "default_icon": "assets/tool-styleeditor.svg",
-    "default_title": "__MSG_page_action_title__"
+    "default_title": "__MSG_pageActionTitle__"
   },
 
   "commands": {
@@ -25,11 +24,26 @@
       "suggested_key": {
         "default": "Ctrl+F9"
       },
-      "description": "Reloads the pages' CSS"
+      "description": "Reloads the CSS"
     }
   },
 
-  "permissions": ["activeTab"],
+  "options_ui": {
+    "page": "assets/options.html",
+    "browser_style": true
+  },
 
-  "default_locale": "en"
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "storage"
+  ],
+
+  "default_locale": "en",
+
+  "applications": {
+    "gecko": {
+      "id": "css-reload@stoyan"
+    }
+  }
 }

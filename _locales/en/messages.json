@@ -1,10 +1,27 @@
 {
+  "title": {
+    "message": "CSS Reload",
+    "description": "Extension name"
+  },
   "description": {
     "message": "Reload the linked CSS stylesheets in the current page using Ctrl+F9 or page action.",
-    "description": "Description of the extension."
+    "description": "Extension description."
   },
-  "page_action_title": {
+  "pageActionTitle": {
     "message": "Reloads the stylesheets",
     "description": "Action button title."
+  },
+  "contextMenuItem": {
+    "message": "Reload stylesheets",
+    "description": "Context menu item label."
+  },
+  "optionsIntegration": {
+    "message": "Browser Integration"
+  },
+  "optionsIntegrationPageAction": {
+    "message": "Page action"
+  },
+  "optionsIntegrationContextMenu": {
+    "message": "Context menu"
   }
 }

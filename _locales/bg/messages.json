@@ -1,10 +1,27 @@
 {
+  "title": {
+    "message": "CSS Reload",
+    "description": "Наименование на добавката."
+  },
   "description": {
-    "message": "Презарежда свързаните стилови листове на CSS на текущата страница с натискане на Ctrl+F9 или действие за страницата.",
+    "message": "Презарежда свързаните стилови листове на CSS на текущата страница",
     "description": "Описание на добавката."
   },
-  "page_action_title": {
+  "pageActionTitle": {
     "message": "Презарежда стиловите листове",
     "description": "Заглавие на бутона."
+  },
+  "contextMenuItem": {
+    "message": "Презарежда стиловете",
+    "description": "Елемент на контекстното меню в страницата."
+  },
+  "optionsIntegration": {
+    "message": "Интеграция с четеца"
+  },
+  "optionsIntegrationPageAction": {
+    "message": "Действие със страницата"
+  },
+  "optionsIntegrationContextMenu": {
+    "message": "Контекстуално меню"
   }
 }
