@@ -1,6 +1,5 @@
 # CSS Reload
-
-Reload the current page CSS stylesheets using hot key, context menu or page action. All three optional - visit the options page.
+Reload the current page CSS stylesheets using hotkey, context menu or page action. All three optional - visit the options page.
 
 **Note**: Currently the hotkey is Ctrl+F9 and can not be changed. If you are interrested please follow [the issue](https://github.com/StoyanDimitrov/css-reload/issues/2).
 
@@ -16,4 +15,4 @@ If you want to omit a stylesheet from reloading (i.e. font foundry resources etc
     - General improvements.
  - General code improvements.
 
-If you thing something is missing and extension should have it just [rise an issue](https://github.com/StoyanDimitrov/css-reload/issues) in the tracker.
+If you think something is missing and extension should have it just [rise an issue](https://github.com/StoyanDimitrov/css-reload/issues) in the tracker.
