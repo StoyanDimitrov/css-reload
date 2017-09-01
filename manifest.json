@@ -39,11 +39,5 @@
     "contextMenus"
   ],
 
-  "default_locale": "en",
-
-  "applications": {
-    "gecko": {
-      "id": "css-reload@stoyan"
-    }
-  }
+  "default_locale": "en"
 }
