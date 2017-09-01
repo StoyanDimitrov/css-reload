@@ -18,35 +18,30 @@ const HotKey = {
 
 function Options()
 {
-  this.$ = [
+  this.options = [
     PageAction,
     ContextMenu,
     HotKey,
   ]
 }
 
-Options.prototype.init = function()
-{
-  browser.storage.sync.get().then((branch) => {
+Options.prototype.init = function OptionsInit() {
+  browser.storage.sync.get(defaultSettings)
+    .then((branch) => {
+      if (Object.keys(branch) === 0) {
+        return this
+      }
 
-    if (Object.keys(branch) === 0) {
-      return this
-    }
-
-console.log('storage', branch)
-      this.$.map((item) => {
+      this.options.map((item) => {
         item.el[item.prop] = branch[item.key]
       })
-  }).catch((err) => {
-    console.log(err)
-  })
+    })
 
   return this
 }
 
-Options.prototype.listen = function()
-{
-  this.$.map((item) => {
+Options.prototype.listen = function OptionsListen() {
+  this.options.map((item) => {
     item.el.addEventListener('change', () => {
       const settings = {}
       settings[item.key] = item.el[item.prop]

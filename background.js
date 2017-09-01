@@ -1,12 +1,20 @@
 'use strict'
 
-var boo = {}
+// TODO get rid of globals
+var state = {}
+  , currentTabId = null
 
+/**
+ * Event listeners
+ */
 browser.tabs.onActivated.addListener((active) => {
-  activateAction(active.tabId)
+  currentTabId = active.tabId
+
+  managePageAction()
 })
 
 browser.tabs.onUpdated.addListener((tabId, changed) => {
+  currentTabId = tabId
 
   if (changed.status
     && changed.status !== 'complete'
@@ -14,49 +22,77 @@ browser.tabs.onUpdated.addListener((tabId, changed) => {
     return
   }
 
-  activateAction(tabId)
+  managePageAction()
+})
+
+browser.commands.onCommand.addListener((name) => {
+  if (name !== 'reload-css'
+    || ! state.hasHotKey
+  ) {
+    return
+  }
+
+  main()
 })
 
 browser.pageAction.onClicked.addListener((tab) => {
-  browser.tabs.executeScript(tab.id, {
+  main()
+})
+
+browser.contextMenus.onClicked.addListener((info, tab) => {
+  main()
+})
+
+browser.storage.onChanged.addListener((change, area) => {
+  Object.entries(change).map((entry) => {
+    state[entry[0]] = entry[1].newValue
+  })
+
+  managePageAction()
+  manageContextMenu()
+})
+
+
+/**
+ * Main extension purpose
+ */
+function main()
+{
+  browser.tabs.executeScript(currentTabId, {
     file: 'assets/css-reload.js'
   }).catch(err => {
     // mute permission errors
   })
-})
+}
 
+browser.storage.sync.get(defaultSettings)
+  .then((items) => {
+    state = items
 
-function activateAction(tabId)
+    manageContextMenu()
+    managePageAction()
+  })
+
+function managePageAction()
 {
-console.log('boo', boo)
-
-  if (! boo.hasPageAction) {
-    browser.pageAction.hide(tabId)
+  if (! state.hasPageAction) {
+    browser.pageAction.hide(currentTabId)
     return
   }
 
-  browser.pageAction.show(tabId)
+  browser.pageAction.show(currentTabId)
 }
 
-
-browser.storage.sync.get({
-  hasPageAction: true,
-  hasContextMenu: false,
-}).then(function(items) {
-  boo = items
-
-  if (items && items.hasContextMenu) {
-    // createContextMenu()
+function manageContextMenu()
+{
+  if (! state.hasContextMenu) {
+    browser.contextMenus.removeAll()
+    return
   }
-}).catch((err) => {
-  console.log(err)
-})
 
-browser.storage.onChanged.addListener((change, area) => {
-  console.log(change, area)
-  const m = Object.keys(change)
-  for (let l of m) {
-console.log('change', l, change[l].newValue)
-    boo[m] = change[l].newValue
-  }
-})
+  browser.contextMenus.create({
+    id: 'reloadCss',
+    title: browser.i18n.getMessage('contextMenuItem'),
+    contexts: ['all']
+  })
+}

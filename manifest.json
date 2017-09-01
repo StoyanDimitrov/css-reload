@@ -11,7 +11,7 @@
   },
 
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["assets/default-settings.js", "background.js"]
   },
 
   "page_action": {
@@ -20,7 +20,7 @@
   },
 
   "commands": {
-    "_execute_page_action": {
+    "reload-css": {
       "suggested_key": {
         "default": "Ctrl+F9"
       },
@@ -35,8 +35,8 @@
 
   "permissions": [
     "activeTab",
-    "contextMenus",
-    "storage"
+    "storage",
+    "contextMenus"
   ],
 
   "default_locale": "en",

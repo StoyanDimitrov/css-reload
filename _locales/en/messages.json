@@ -1,30 +1,34 @@
 {
   "title": {
     "message": "CSS Reload",
-    "description": "Extension name"
+    "description": "Extension name."
   },
   "description": {
-    "message": "Reload the linked CSS stylesheets in the current page using Ctrl+F9 or page action.",
+    "message": "Reload the linked CSS stylesheets in the current page.",
     "description": "Extension description."
   },
   "pageActionTitle": {
     "message": "Reloads the stylesheets",
-    "description": "Action button title."
+    "description": "Page action button title."
   },
   "contextMenuItem": {
-    "message": "Reload stylesheets",
+    "message": "Reload CSS",
     "description": "Context menu item label."
   },
   "optionsIntegration": {
-    "message": "Browser Integration"
+    "message": "Browser Integration",
+    "description": "Integrations section title in the options."
   },
   "optionsIntegrationPageAction": {
-    "message": "Page action"
+    "message": "Page action",
+    "description": "Page action integration option. Checkbox label."
   },
   "optionsIntegrationContextMenu": {
-    "message": "Context menu"
+    "message": "Context menu",
+    "description": "Context menu integration option. Checkbox label."
   },
   "optionsIntegrationHotKey": {
-    "message": "Hot key"
+    "message": "Hot key",
+    "description": "Hot key integration option. Checkbox label."
   }
 }

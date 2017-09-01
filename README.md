@@ -1,6 +1,16 @@
 # CSS Reload
 
-Reload the linked CSS stylesheets in the current page using Ctrl+F9 or page action.
+Reload the current page CSS stylesheets using hot key, context menu or page action. All three optional - visit the options page.
 
-If you want to omit some style sheet from reloading (i.e. font foundry resources) add attribute "data-autoreload" with value "false" like this:
+**Note**: Currently the hotkey is Ctrl+F9 and can not be changed. If you are interrested please follow [the issue](https://github.com/StoyanDimitrov/css-reload/issues/2).
+
+## Why reload all heavy stylesheets?
+If you want to omit a stylesheet from reloading (i.e. font foundry resources etc.) add "data-autoreload" attribute with value "false" like this:
 <blockquote><code>&lt;link href="" rel="stylesheet" type="text/css" <strong>data-autoreload="false"</strong>&gt;</code></blockquote>
+
+
+## Road map
+ - Options page optimization
+    - Feedback on save
+    - General improvements
+ - General code improvements
