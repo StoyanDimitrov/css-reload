@@ -23,5 +23,8 @@
   },
   "optionsIntegrationContextMenu": {
     "message": "Context menu"
+  },
+  "optionsIntegrationHotKey": {
+    "message": "Hot key"
   }
 }

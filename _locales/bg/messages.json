@@ -23,5 +23,8 @@
   },
   "optionsIntegrationContextMenu": {
     "message": "Контекстуално меню"
+  },
+  "optionsIntegrationHotKey": {
+    "message": "Бързи клавиши"
   }
 }

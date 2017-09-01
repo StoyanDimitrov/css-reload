@@ -10,11 +10,18 @@ const ContextMenu = {
   key: 'hasContextMenu',
 }
 
+const HotKey = {
+  el: document.getElementById('has-hot-key'),
+  prop: 'checked',
+  key: 'hasHotKey',
+}
+
 function Options()
 {
   this.$ = [
     PageAction,
     ContextMenu,
+    HotKey,
   ]
 }
 
