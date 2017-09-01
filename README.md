@@ -11,6 +11,9 @@ If you want to omit a stylesheet from reloading (i.e. font foundry resources etc
 
 ## Road map
  - Options page optimization
-    - Feedback on save
-    - General improvements
- - General code improvements
+    - Handle the case when all three invocation methods are unchecked.
+    - Feedback on options save.
+    - General improvements.
+ - General code improvements.
+
+If you thing something is missing and extension should have it just [rise an issue](https://github.com/StoyanDimitrov/css-reload/issues) in the tracker.
