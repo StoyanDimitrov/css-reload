@@ -11,7 +11,7 @@ L10n.prototype.init = function()
   })
 
   titles.map((node) => {
-    titles.setAttribute('title', browser.i18n.getMessage(node.getAttribute('data-l10n-text')))
+    titles.setAttribute('title', browser.i18n.getMessage(node.getAttribute('data-l10n-title')))
   })
 }
 
