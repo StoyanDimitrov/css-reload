@@ -28,7 +28,7 @@
     "description": "Context menu integration option. Checkbox label."
   },
   "optionsIntegrationHotKey": {
-    "message": "Hot key",
+    "message": "Hot key (Ctrl+F9)",
     "description": "Hot key integration option. Checkbox label."
   }
 }
