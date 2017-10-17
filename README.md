@@ -15,7 +15,7 @@ If you want to omit a stylesheet from reloading (i.e. font foundry resources etc
     - General improvements.
  - General code improvements.
 
-If you think something is missing and extension should have it just [rise an issue](https://github.com/StoyanDimitrov/css-reload/issues) in the tracker.
+If you think something is missing and extension should have it just [rise an issue](https://github.com/StoyanDimitrov/css-reload/issues/new) in the tracker.
 
 ## Known issues
-Does not work in Responsive Design Mode due to [bug 1394841](https://bugzil.la/1394841).
+Does not work in Responsive Design Mode. Follow [the progress](https://github.com/StoyanDimitrov/css-reload/issues/5).
