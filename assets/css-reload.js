@@ -1,9 +1,8 @@
 'use strict'
 
-let ts = Date.now();
 function addTs(href) {
     const url = new URL(href)
-    url.searchParams.set('cacheBuster', ts);
+    url.searchParams.set('cacheBuster', Date.now());
     return url.href;
 }
 
