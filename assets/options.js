@@ -16,12 +16,19 @@ const HotKey = {
   key: 'hasHotKey',
 }
 
+const UpdateImage = {
+  el: document.getElementById('update-images'),
+  prop: 'checked',
+  key: 'updateImages',
+}
+
 function Options()
 {
   this.options = [
     PageAction,
     ContextMenu,
     HotKey,
+    UpdateImages
   ]
 }
 
