@@ -3,7 +3,7 @@
 let ts = Date.now();
 function addTs(href) {
     const url = new URL(href)
-    url.searchParams.set('cacheBuster', Date.now())
+    url.searchParams.set('cacheBuster', ts);
     return url.href;
 }
 
