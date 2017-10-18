@@ -30,5 +30,9 @@
   "optionsIntegrationHotKey": {
     "message": "Hot key (Ctrl+F9)",
     "description": "Hot key integration option. Checkbox label."
+  },
+  "optionsUpdateImages": {
+    "message": "Update images",
+    "description": "Update image option. Checkbox label."
   }
 }
