@@ -5,21 +5,52 @@
     <title data-l10n-text="title"></title>
     <script src="l10n.js"></script>
     <script src="default-settings.js"></script>
+    <style>
+      input {
+        margin-right: 0;
+      }
+      input + button {
+        margin-left: 1rem;
+      }
+      button + button {
+        margin-left: 1rem;
+      }
+      fieldset {
+        margin-top: 1rem;
+        padding: 1rem;
+
+        border-style: solid;
+        border-width: 1px;
+      }
+      fieldset div.browser-style {
+        margin: 0;
+      }
+    </style>
   </head>
   <body>
     <h2 data-l10n-text="optionsIntegration"></h2>
-    <div class="browser-style">
-      <input type="checkbox" id="has-page-action" value="true">
-      <label for="has-page-action" data-l10n-text="optionsIntegrationPageAction"></label>
-    </div>
-    <div class="browser-style">
-      <input type="checkbox" id="has-context-menu" value="true">
-      <label for="has-context-menu" data-l10n-text="optionsIntegrationContextMenu"></label>
-    </div>
-    <div class="browser-style">
-      <input type="checkbox" id="has-hot-key" value="true">
-      <label for="has-hot-key" data-l10n-text="optionsIntegrationHotKey"></label>
-    </div>
+    <form>
+      <div class="browser-style">
+        <input type="checkbox" id="has-page-action" value="true">
+        <label for="has-page-action" data-l10n-text="optionsIntegrationPageAction"></label>
+      </div>
+      <div class="browser-style">
+        <input type="checkbox" id="has-context-menu" value="true">
+        <label for="has-context-menu" data-l10n-text="optionsIntegrationContextMenu"></label>
+      </div>
+      <div class="browser-style">
+        <input type="checkbox" id="has-hot-key" value="true">
+        <label for="has-hot-key" data-l10n-text="optionsIntegrationHotKey"></label>
+      </div>
+      <fieldset data-section="hot-key-change">
+        <legend data-l10n-text="optionsHotKeyChangeValue"></legend>
+        <div class="browser-style">
+          <input type="text" id="hot-key-value">
+          <button id="hot-key-change" class="browser-style" type="button" data-l10n-text="optionsHotKeyChangeChange">
+          <button id="hot-key-reset" class="browser-style" type="button" data-l10n-text="optionsHotKeyChangeReset">
+        </div>
+      </fieldset>
+    </form>
     <script src="options.js"></script>
   </body>
 </html>

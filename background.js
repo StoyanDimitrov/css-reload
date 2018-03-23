@@ -69,12 +69,16 @@ browser.storage.sync.get(defaultSettings)
   .then((items) => {
     state = items
 
-    manageContextMenu()
     managePageAction()
+    manageContextMenu()
   })
 
 function managePageAction()
 {
+  if (! currentTabId) {
+    return
+  }
+
   if (! state.hasPageAction) {
     browser.pageAction.hide(currentTabId)
     return

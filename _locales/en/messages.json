@@ -8,7 +8,7 @@
     "description": "Extension description."
   },
   "pageActionTitle": {
-    "message": "Reloads the stylesheets",
+    "message": "Reload the stylesheets",
     "description": "Page action button title."
   },
   "contextMenuItem": {
@@ -28,7 +28,19 @@
     "description": "Context menu integration option. Checkbox label."
   },
   "optionsIntegrationHotKey": {
-    "message": "Hot key (Ctrl+F9)",
+    "message": "Hot key",
     "description": "Hot key integration option. Checkbox label."
+  },
+  "optionsHotKeyChangeValue": {
+    "message": "Hot key change",
+    "description": "Hot key change section title."
+  },
+  "optionsHotKeyChangeChange": {
+    "message": "Change",
+    "description": "Hot key change button title."
+  },
+  "optionsHotKeyChangeReset": {
+    "message": "Reset",
+    "description": "Hot key change button title."
   }
 }

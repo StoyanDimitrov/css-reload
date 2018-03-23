@@ -28,4 +28,4 @@ document.addEventListener('readystatechange', () => {
   }
 
   (new L10n()).init()
-}, false)
+})
