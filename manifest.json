@@ -1,21 +1,24 @@
 {
   "manifest_version": 2,
-  "version": "0.3.0",
+  "version": "0.3.2",
   "name": "__MSG_title__",
   "description": "__MSG_description__",
   "homepage_url": "https://github.com/StoyanDimitrov/css-reload",
 
   "icons": {
-    "96": "assets/tool-styleeditor.svg",
-    "48": "assets/tool-styleeditor.svg"
+    "48": "assets/icon.svg",
+    "96": "assets/icon.svg"
   },
 
   "background": {
-    "scripts": ["assets/default-settings.js", "background.js"]
+    "scripts": [
+      "assets/default-settings.js",
+      "background.js"
+    ]
   },
 
   "page_action": {
-    "default_icon": "assets/tool-styleeditor.svg",
+    "default_icon": "assets/icon.svg",
     "default_title": "__MSG_pageActionTitle__"
   },
 
