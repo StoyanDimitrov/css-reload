@@ -14,7 +14,7 @@ const IntegrationHotKey = {
   el: document.getElementById('has-hot-key'),
   prop: 'checked',
   key: 'hasHotKey',
-  cb: 'toggleHotKeyChange'
+  cb: 'toggleHotKeyChange',
 }
 
 const HotKeyReloadCss = {
@@ -26,13 +26,13 @@ const HotKeyReloadCss = {
 const HotKeyReloadCssSave = {
   el: document.getElementById('hot-key-change'),
   key: HotKeyReloadCss,
-  cb: 'hotkeySave'
+  cb: 'hotkeySave',
 }
 
 const HotKeyReloadCssReset = {
   el: document.getElementById('hot-key-reset'),
   key: HotKeyReloadCss,
-  cb: 'hotkeyReset'
+  cb: 'hotkeyReset',
 }
 
 function Options()
@@ -94,7 +94,7 @@ Options.prototype.init = function OptionsInit() {
       this.integrations.map((item) => {
         item.el[item.prop] = branch[item.key]
 
-        // call the callback if any
+        // run the callback if any
         if ('cb' in item) {
           this.callbacks[item.cb](item.el[item.prop])
         }
@@ -126,7 +126,7 @@ Options.prototype.listen = function OptionsListen() {
 
       browser.storage.sync.set(settings)
 
-      // call the callback if any
+      // run the callback if any
       if ('cb' in item) {
         this.callbacks[item.cb](item.el[item.prop])
       }
