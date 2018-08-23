@@ -1,0 +1,59 @@
+{
+    "title": {
+        "message": "CSS 重载",
+        "description": "Extension name.",
+        "hash": "22d6cc19496c15cca52e488ae8fbcdfd"
+    },
+    "description": {
+        "message": "重新加载当前页面中的非内联 CSS 样式表。",
+        "description": "Extension description.",
+        "hash": "8bf72797656ea50209164b3221939a24"
+    },
+    "pageActionTitle": {
+        "message": "重载样式表",
+        "description": "Page action button title.",
+        "hash": "d664c24c145cddf389bc1a1c98f2e5a6"
+    },
+    "contextMenuItem": {
+        "message": "重载 CSS",
+        "description": "Context menu item label.",
+        "hash": "694e5880648b43bb5dba6e323817ad48"
+    },
+    "optionsIntegration": {
+        "message": "浏览器集成",
+        "description": "Integrations section title in the options.",
+        "hash": "ad6809f1903bcbf98045ed6da64dfbc2"
+    },
+    "optionsIntegrationPageAction": {
+        "message": "页面动作",
+        "description": "Page action integration option. Checkbox label.",
+        "hash": "4b1a63f413ecc0a5408ae36dfaa9b3d6"
+    },
+    "optionsIntegrationContextMenu": {
+        "message": "右键菜单",
+        "description": "Context menu integration option. Checkbox label.",
+        "hash": "42b7d6be5194f8ce4492f96420343bc4"
+    },
+    "optionsIntegrationHotKey": {
+        "message": "热键",
+        "description": "Hot key integration option. Checkbox label.",
+        "hash": "b1f4f2d0954a5b752ce7375e3286fc73"
+    },
+    "optionsHotKeyChangeValue": {
+        "message": "热键变更",
+        "description": "Hot key change section title.",
+        "hash": "c933248e450190ef3d5648cd8ab91cea"
+    },
+    "optionsHotKeyChangeChange": {
+        "message": "更改",
+        "description": "Hot key change button title.",
+        "hash": "257a893e0876d1f59269c60e60ffdf7f"
+    },
+    "optionsHotKeyChangeReset": {
+        "message": "重置",
+        "description": "Hot key change button title.",
+        "hash": "0d25968a7dfc21f95043a86dd5373b81"
+    },
+
+    "__WET_LOCALE__": { "message": "zh-CN" }
+}
