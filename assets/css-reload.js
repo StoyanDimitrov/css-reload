@@ -10,4 +10,4 @@
 
       link.href = url.href
   })
-})()
+}())

@@ -2,21 +2,37 @@
 
 // TODO get rid of globals
 var state = {}
-  , currentTabId = null
+  , activeTabId = null
 
 /**
  * Event listeners
  */
+browser.windows.onFocusChanged.addListener((windowId) => {
+  if (windowId === browser.windows.WINDOW_ID_NONE) {
+    return
+  }
+
+  browser.tabs.query({
+    active: true,
+    windowId: windowId,
+  })
+    .then((tab) => {
+      activeTabId = tab[0].id
+
+      managePageAction()
+    })
+})
+
 browser.tabs.onActivated.addListener((active) => {
-  currentTabId = active.tabId
+  activeTabId = active.tabId
 
   managePageAction()
 })
 
 browser.tabs.onUpdated.addListener((tabId, changed) => {
-  currentTabId = tabId
+  activeTabId = tabId
 
-  if (changed.status
+  if (typeof changed.status !== 'undefined'
     && changed.status !== 'complete'
   ) {
     return
@@ -58,8 +74,8 @@ browser.storage.onChanged.addListener((change, area) => {
  */
 function main()
 {
-  browser.tabs.executeScript(currentTabId, {
-    file: 'assets/css-reload.js'
+  browser.tabs.executeScript(activeTabId, {
+    file: 'assets/css-reload.js',
   }).catch(err => {
     // mute permission errors
   })
@@ -75,16 +91,16 @@ browser.storage.sync.get(defaultSettings)
 
 function managePageAction()
 {
-  if (! currentTabId) {
+  if (! activeTabId) {
     return
   }
 
   if (! state.hasPageAction) {
-    browser.pageAction.hide(currentTabId)
+    browser.pageAction.hide(activeTabId)
     return
   }
 
-  browser.pageAction.show(currentTabId)
+  browser.pageAction.show(activeTabId)
 }
 
 function manageContextMenu()
