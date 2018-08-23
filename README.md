@@ -1,5 +1,5 @@
 # CSS Reload
-Reload the current page CSS stylesheets using customizable hotkey, context menu or page action. All three optional - visit the options page.
+Reload the current pages' CSS stylesheets using customizable hotkey, context menu or page action. All three optional - visit the options page.
 
 ## Why reload all heavy stylesheets?
 If you want to omit a stylesheet from reloading (i.e. font foundry resources etc.) add "data-autoreload" attribute with value "false" like this:
