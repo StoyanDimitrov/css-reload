@@ -1,6 +1,6 @@
 {
   "manifest_version": 2,
-  "version": "0.3.3",
+  "version": "0.3.6",
   "name": "__MSG_title__",
   "description": "__MSG_description__",
   "homepage_url": "https://github.com/StoyanDimitrov/css-reload",
@@ -12,7 +12,7 @@
 
   "background": {
     "scripts": [
-      "assets/default-settings.js",
+      "assets/internal-state.js",
       "background.js"
     ]
   },

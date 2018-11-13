@@ -5,42 +5,44 @@
   },
   "description": {
     "message": "Reload the linked CSS stylesheets in the current page.",
-    "description": "Extension description."
+    "description": "Extension description"
   },
+
   "pageActionTitle": {
-    "message": "Reload the stylesheets",
-    "description": "Page action button title."
+    "message": "Reload stylesheets",
+    "description": "Page action button title"
   },
   "contextMenuItem": {
     "message": "Reload CSS",
-    "description": "Context menu item label."
+    "description": "Context menu item label"
   },
+
   "optionsIntegration": {
     "message": "Browser Integration",
-    "description": "Integrations section title in the options."
+    "description": "Integrations section title in the options"
   },
   "optionsIntegrationPageAction": {
     "message": "Page action",
-    "description": "Page action integration option. Checkbox label."
+    "description": "Page action integration option. Checkbox label"
   },
   "optionsIntegrationContextMenu": {
     "message": "Context menu",
-    "description": "Context menu integration option. Checkbox label."
+    "description": "Context menu integration option. Checkbox label"
   },
   "optionsIntegrationHotKey": {
     "message": "Hot key",
-    "description": "Hot key integration option. Checkbox label."
+    "description": "Hot key integration option. Checkbox label"
   },
   "optionsHotKeyChangeValue": {
     "message": "Hot key change",
-    "description": "Hot key change section title."
+    "description": "Hot key change section title"
   },
   "optionsHotKeyChangeChange": {
     "message": "Change",
-    "description": "Hot key change button title."
+    "description": "Hot key change button title"
   },
   "optionsHotKeyChangeReset": {
     "message": "Reset",
-    "description": "Hot key change button title."
+    "description": "Hot key change button title"
   }
 }

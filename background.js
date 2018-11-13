@@ -1,8 +1,6 @@
 'use strict'
 
-// TODO get rid of globals
-var state = {}
-  , activeTabId = null
+const STATE = internalState()
 
 /**
  * Event listeners
@@ -17,20 +15,20 @@ browser.windows.onFocusChanged.addListener((windowId) => {
     windowId: windowId,
   })
     .then((tab) => {
-      activeTabId = tab[0].id
+      STATE.setActiveTab(tab[0].id)
 
       managePageAction()
     })
 })
 
 browser.tabs.onActivated.addListener((active) => {
-  activeTabId = active.tabId
+  STATE.setActiveTab(active.tabId)
 
   managePageAction()
 })
 
 browser.tabs.onUpdated.addListener((tabId, changed) => {
-  activeTabId = tabId
+  STATE.setActiveTab(tabId)
 
   if (typeof changed.status !== 'undefined'
     && changed.status !== 'complete'
@@ -43,7 +41,7 @@ browser.tabs.onUpdated.addListener((tabId, changed) => {
 
 browser.commands.onCommand.addListener((name) => {
   if (name !== 'reload-css'
-    || ! state.hasHotKey
+    || ! STATE.isIntegrationEnabled('hasHotKey')
   ) {
     return
   }
@@ -60,8 +58,8 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
 })
 
 browser.storage.onChanged.addListener((change, area) => {
-  Object.entries(change).map((entry) => {
-    state[entry[0]] = entry[1].newValue
+  Object.entries(change).map((integration) => {
+    STATE.setIntegrationState(integration[0], integration[1].newValue)
   })
 
   managePageAction()
@@ -74,16 +72,16 @@ browser.storage.onChanged.addListener((change, area) => {
  */
 function main()
 {
-  browser.tabs.executeScript(activeTabId, {
+  browser.tabs.executeScript(STATE.getActiveTab(), {
     file: 'assets/css-reload.js',
   }).catch(err => {
     // mute permission errors
   })
 }
 
-browser.storage.sync.get(defaultSettings)
+browser.storage.sync.get(STATE.getDefaultIntegrations())
   .then((items) => {
-    state = items
+    STATE.setIntegrations(items)
 
     managePageAction()
     manageContextMenu()
@@ -91,21 +89,21 @@ browser.storage.sync.get(defaultSettings)
 
 function managePageAction()
 {
-  if (! activeTabId) {
+  if (! STATE.getActiveTab()) {
     return
   }
 
-  if (! state.hasPageAction) {
-    browser.pageAction.hide(activeTabId)
+  if (! STATE.isIntegrationEnabled('hasPageAction')) {
+    browser.pageAction.hide(STATE.getActiveTab())
     return
   }
 
-  browser.pageAction.show(activeTabId)
+  browser.pageAction.show(STATE.getActiveTab())
 }
 
 function manageContextMenu()
 {
-  if (! state.hasContextMenu) {
+  if (! STATE.isIntegrationEnabled('hasContextMenu')) {
     browser.contextMenus.removeAll()
     return
   }

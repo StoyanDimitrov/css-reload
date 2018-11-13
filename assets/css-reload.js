@@ -1,6 +1,6 @@
-'use strict'
-
 ;(function() {
+  'use strict'
+
   const query = 'link[rel=stylesheet][href]:not([data-autoreload=false])'
 
   document.querySelectorAll(query)

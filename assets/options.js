@@ -1,3 +1,5 @@
+const STATE = internalState()
+
 const IntegrationPageAction = {
   el: document.getElementById('has-page-action'),
   prop: 'checked',
@@ -84,7 +86,7 @@ function Options() {
 
 Options.prototype.init = function OptionsInit() {
   // initiate integration values
-  browser.storage.sync.get(defaultSettings)
+  browser.storage.sync.get(STATE.getDefaultIntegrations())
     .then((branch) => {
       if (Object.keys(branch) === 0) {
         return this
