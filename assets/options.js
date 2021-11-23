@@ -35,8 +35,7 @@ const HotKeyReloadCssReset = {
   cb: 'hotkeyReset',
 }
 
-function Options()
-{
+function Options() {
   this.integrations = [
     IntegrationPageAction,
     IntegrationContextMenu,
@@ -71,7 +70,7 @@ function Options()
         false: 'removeAttribute'
       }
 
-      Array.from(document.querySelectorAll('[data-section="hot-key-change"] input, [data-section="hot-key-change"] button')).map((item) => {
+      document.querySelectorAll('[data-section="hot-key-change"] input, [data-section="hot-key-change"] button').forEach((item) => {
         if (value) {
           item.removeAttribute('disabled')
         } else {

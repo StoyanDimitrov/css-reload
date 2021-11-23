@@ -1,23 +1,21 @@
 function L10n()
 {}
 
-L10n.prototype.init = function()
-{
+L10n.prototype.init = function () {
   const texts = this.get('[data-l10n-text]')
-    , titles = this.get('[data-l10n-title]')
+  const titles = this.get('[data-l10n-title]')
 
-  texts.map((node) => {
-    node.textContent = browser.i18n.getMessage(node.getAttribute('data-l10n-text'))
+  texts.forEach((node) => {
+    node.textContent = browser.i18n.getMessage(node.dataset.l10nText)
   })
 
-  titles.map((node) => {
-    titles.setAttribute('title', browser.i18n.getMessage(node.getAttribute('data-l10n-title')))
+  titles.forEach((node) => {
+    titles.setAttribute('title', browser.i18n.getMessage(node.dataset.l10nTitle))
   })
 }
 
-L10n.prototype.get = function(selector)
-{
-  return Array.from(document.documentElement.querySelectorAll(selector))
+L10n.prototype.get = function (selector) {
+  return document.documentElement.querySelectorAll(selector)
 }
 
 
