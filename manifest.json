@@ -6,8 +6,7 @@
   "homepage_url": "https://github.com/StoyanDimitrov/css-reload",
 
   "icons": {
-    "48": "assets/icon.svg",
-    "96": "assets/icon.svg"
+    "48": "assets/icon.svg"
   },
 
   "background": {
@@ -19,7 +18,8 @@
 
   "page_action": {
     "default_icon": "assets/icon.svg",
-    "default_title": "__MSG_pageActionTitle__"
+    "default_title": "__MSG_pageActionTitle__",
+    "pinned": true
   },
 
   "commands": {

@@ -70,8 +70,7 @@ browser.storage.onChanged.addListener((change, area) => {
 /**
  * Main extension purpose
  */
-function main()
-{
+function main() {
   browser.tabs.executeScript(STATE.getActiveTab(), {
     file: 'assets/css-reload.js',
   }).catch(err => {
@@ -87,8 +86,7 @@ browser.storage.sync.get(STATE.getDefaultIntegrations())
     manageContextMenu()
   })
 
-function managePageAction()
-{
+function managePageAction() {
   if (! STATE.getActiveTab()) {
     return
   }
@@ -101,8 +99,7 @@ function managePageAction()
   browser.pageAction.show(STATE.getActiveTab())
 }
 
-function manageContextMenu()
-{
+function manageContextMenu() {
   if (! STATE.isIntegrationEnabled('hasContextMenu')) {
     browser.contextMenus.removeAll()
     return

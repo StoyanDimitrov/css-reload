@@ -8,7 +8,7 @@ function internalState()
         hasHotKey: true,
       }
 
-  const isIntegrationEnabled = function(integration) {
+  const isIntegrationEnabled = function (integration) {
     let enabled = false
     if (integration in integrations
       && integrations[integration] === true
@@ -19,23 +19,23 @@ function internalState()
     return enabled
   }
 
-  const setIntegrations = function(specs) {
+  const setIntegrations = function (specs) {
     integrations = specs
   }
 
-  const setIntegrationState = function(integration, isEnabled) {
+  const setIntegrationState = function (integration, isEnabled) {
     integrations[integration] = isEnabled
   }
 
-  const getActiveTab = function() {
+  const getActiveTab = function () {
     return activeTabId
   }
 
-  const setActiveTab = function(tabId) {
+  const setActiveTab = function (tabId) {
     activeTabId = tabId
   }
 
-  const getDefaultIntegrations = function() {
+  const getDefaultIntegrations = function () {
     return defaultIntegrations
   }
 
